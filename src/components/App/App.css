@@ -1,0 +1,45 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(32, 32, 32, 0.9);
+  margin: 10px;
+  border-radius: 10px;
+  padding-bottom: 20px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+h2 {
+  color: white;
+}
+
+p {
+  color: white;
+}

@@ -54,6 +54,7 @@ class RegistrationForm extends Component {
             ref={this.firstInput}
             id='registration-name-input'
             name='name'
+            placeholder='First Name'
             required
           />
         </div>
@@ -64,6 +65,7 @@ class RegistrationForm extends Component {
           <Input
             id='registration-username-input'
             name='username'
+            placeholder='Username'
             required
           />
         </div>
@@ -74,6 +76,7 @@ class RegistrationForm extends Component {
           <Input
             id='registration-password-input'
             name='password'
+            placeholder='Password'
             type='password'
             required
           />
@@ -83,7 +86,7 @@ class RegistrationForm extends Component {
             Sign up
           </Button>
           {' '}
-          <Link to='/login'>Already have an account?</Link>
+          <Link className="footer-link" to='/login'>Already have an account?</Link>
         </footer>
       </form>
     )
