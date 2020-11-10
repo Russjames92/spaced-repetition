@@ -14,8 +14,8 @@ class Header extends Component {
   renderLogoutLink() {
     return (
       <div>
-        <span>
-          {this.context.user.name}
+        <span className="user-dashboard">
+          {this.context.user.name}' Dashboard |
         </span>
         <nav>
           <Link
