@@ -2,7 +2,6 @@ import React from 'react';
 import './Words.css';
 
 function Words(props) {
-    console.log(props);
     return (
         <li>
             <h4 className="list-item-word">{props.word.original}</h4>

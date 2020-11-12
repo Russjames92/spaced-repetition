@@ -11,9 +11,7 @@ const AuthApiService = {
       body: JSON.stringify(user),
     })
       .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
+        !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
       )
   },
   postLogin({ username, password }) {
@@ -25,9 +23,7 @@ const AuthApiService = {
       body: JSON.stringify({ username, password }),
     })
       .then(res =>
-        (!res.ok)
-          ? res.json().then(err => Promise.reject(err))
-          : res.json()
+        !res.ok ? res.json().then(err => Promise.reject(err)) : res.json()
       )
   },
   refreshToken() {
@@ -38,9 +34,7 @@ const AuthApiService = {
       },
     })
       .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
+        !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
       )
   },
 }
