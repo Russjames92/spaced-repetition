@@ -32,8 +32,8 @@ class Dashboard extends Component {
     renderWordList = (words) => {
         let wordList = [];
         if (words) {
-            words.forEach((word) => {
-                wordList.push(<Words key={word.id} word={word} />);
+            words.map((word) => {
+                return wordList.push(<Words key={word.id} word={word} />);
             });
         }
         return wordList;

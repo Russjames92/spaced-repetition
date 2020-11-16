@@ -15,7 +15,7 @@ class Header extends Component {
     return (
       <div>
         <span className="user-dashboard">
-          {this.context.user.name}' Dashboard |
+          Hey, {this.context.user.name}!
         </span>
         <nav>
           <Link
@@ -43,9 +43,9 @@ class Header extends Component {
       <header>
         <h1>
           <Link to='/'>
-            SPACED
+            THE GERMAN
             <br />
-            REPETITION
+            WORD LEARNER
           </Link>
         </h1>
         {TokenService.hasAuthToken()
