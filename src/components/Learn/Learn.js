@@ -4,6 +4,7 @@ import TokenService from '../../services/token-service';
 import UserContext from '../../contexts/UserContext';
 import { Input, Label } from '../Form/Form';
 import Button from '../Button/Button';
+import './Learn.css';
 
 export default class Learn extends Component {
     state = {
@@ -98,8 +99,10 @@ export default class Learn extends Component {
                 <>
                     <h2 className="result-title">That's Fantastic! Great Job!</h2>
                     <p className="results">
-                        The correct answer for <b>{this.state.previousWord}</b> is{' '}
-                        <b>{this.state.answer}</b>. You chose <b>{this.state.guess}</b>!
+                        The correct answer for <b>"{this.state.previousWord}"</b> is{' '}
+                        <b>"{this.state.answer}"</b>.
+                        <br />
+                        You chose <b>"{this.state.guess}"</b>!
                     </p>
                 </>
             );
@@ -108,8 +111,10 @@ export default class Learn extends Component {
                 <>
                     <h2 className="result-title">Oooooh... So Close! But yet, so far...</h2>
                     <p className="results">
-                        The correct answer for <b>{this.state.previousWord}</b> is{' '}
-                        <b>{this.state.answer}</b>. You unfortunately chose <b>{this.state.guess}</b>.
+                        The correct answer for <b>"{this.state.previousWord}"</b> is{' '}
+                        <b>"{this.state.answer}"</b>.
+                        <br />
+                        You unfortunately chose <b>"{this.state.guess}"</b>.
                     </p>
                 </>
             );
@@ -155,7 +160,7 @@ export default class Learn extends Component {
                     {!this.state.answer ? (
                         <>
                             <h2>Translate The Following</h2>
-                            <span className="next-word">{nextWord}</span>
+                            <span className="next-word">"{nextWord}"</span>
                         </>
                     ) : (
                             <>
@@ -166,7 +171,7 @@ export default class Learn extends Component {
                         {!this.state.answer ? (
                             <>
                                 <div role="alert">{error && <p>{error}</p>}</div>
-                                <div>
+                                <div className="guess-container">
                                     <Label htmlFor="guess-input" className="input-label">
                                         What is the english Translation?
                                     </Label>
@@ -184,30 +189,32 @@ export default class Learn extends Component {
                                     <h5 className="user-score">
                                         Your total score is: {totalScore}
                                     </h5>
-                                    <p>
-                                        You have answered this word correctly {wordCorrectCount}{' '}times.
-                                    </p>
-                                    <p>
-                                        You have answered this word incorrectly {wordIncorrectCount}{' '}times.
-                                    </p>
+                                    <div className="score-feedback">
+                                        <p>
+                                            You have answered this word correctly {wordCorrectCount}{' '}times.
+                                        </p>
+                                        <p>
+                                            You have answered this word incorrectly {wordIncorrectCount}{' '}times.
+                                        </p>
+                                    </div>
                                 </section>
                             </>
                         ) : (
-                            <>
-                                <Button
-                                    type="button"
-                                    id="next-button"
-                                    onClick={(event) => this.handleNextWord(event)}
-                                >
-                                    Next Word!
+                                <>
+                                    <Button
+                                        type="button"
+                                        id="next-button"
+                                        onClick={(event) => this.handleNextWord(event)}
+                                    >
+                                        Next Word!
                                 </Button>
-                                <section className="user-progress">
-                                    <h5 className="user-score">
-                                        Your total score is: {totalScore}
-                                    </h5>
-                                </section>
-                            </>
-                        )}
+                                    <section className="user-progress">
+                                        <h5 className="user-score">
+                                            Your total score is: {totalScore}
+                                        </h5>
+                                    </section>
+                                </>
+                            )}
                     </form>
                 </section>
             </>
