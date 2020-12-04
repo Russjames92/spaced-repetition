@@ -6,8 +6,8 @@ An automatic way to learn the basic words of German. A user can sign up for free
 
 ## Github repos
 
-- [Server](https://github.com/Russjames92/spaced-repetition)
-- [Client](https://github.com/Russjames92/spaced-repetition-api)
+- [Client](https://github.com/Russjames92/spaced-repetition)
+- [Server](https://github.com/Russjames92/spaced-repetition-api)
 
 ## API Endpoints
 
