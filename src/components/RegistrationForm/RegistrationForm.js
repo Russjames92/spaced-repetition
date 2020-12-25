@@ -9,7 +9,6 @@ import UserContext from '../../contexts/UserContext'
 class RegistrationForm extends Component {
   static defaultProps = {
     onRegistrationSuccess: () => { },
-    onLoginSuccess: () => { }
   }
 
   static contextType = UserContext
@@ -18,31 +17,24 @@ class RegistrationForm extends Component {
 
   firstInput = React.createRef()
 
-  handleSubmit = async ev => {
-    ev.preventDefault()
-    const { name, username, password } = ev.target
-
-    const res = await AuthApiService.postUser({
+  handleSubmit = (ev) => {
+    ev.preventDefault();
+    const { name, username, password } = ev.target;
+    AuthApiService.postUser({
       name: name.value,
       username: username.value,
       password: password.value,
     })
-
-
-    if (res.error) {
-      this.setState({ error: res.error })
-    }
-
-    const resLog = await AuthApiService.postLogin({
-      username: username.value,
-      password: password.value,
-    })
-
-    this.context.processLogin(resLog.authToken)
-
-    this.props.onRegistrationSuccess()
-
-  }
+      .then((user) => {
+        name.value = '';
+        username.value = '';
+        password.value = '';
+        this.props.onRegistrationSuccess();
+      })
+      .catch((res) => {
+        this.setState({ error: res.error });
+      });
+  };
 
   componentDidMount() {
     this.firstInput.current.focus()
@@ -54,7 +46,7 @@ class RegistrationForm extends Component {
       <form
         onSubmit={this.handleSubmit}
       >
-        <div role='alert'>
+        <div className="error-message" role='alert'>
           {error && <p>{error}</p>}
         </div>
         <div className="input-group">

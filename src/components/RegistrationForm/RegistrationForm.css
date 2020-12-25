@@ -1,4 +1,10 @@
 .footer-link {
-    color: royalblue;
-    padding: 20px 0;
+  color: royalblue;
+  padding: 20px 0;
+}
+
+.error-message {
+  width: 75%;
+  background-color: red;
+  border-radius: 10px;
 }

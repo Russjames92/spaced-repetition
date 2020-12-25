@@ -18,7 +18,6 @@ class LoginForm extends Component {
   handleSubmit = ev => {
     ev.preventDefault()
     const { username, password } = ev.target
-
     this.setState({ error: null })
 
     AuthApiService.postLogin({
@@ -47,7 +46,7 @@ class LoginForm extends Component {
         className='LoginForm'
         onSubmit={this.handleSubmit}
       >
-        <div role='alert'>
+        <div className="error-message" role='alert'>
           {error && <p>{error}</p>}
         </div>
         <div className="input-group">
